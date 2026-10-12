@@ -23,6 +23,10 @@ ENV/
 .vscode/
 .idea/
 
+# Generated data files
+2026_races_for_streamlit.csv
+data/2026/
+
 # Data (optional - uncomment if CSV files are very large)
 # data/*.csv
 # data/processed/*.csv
