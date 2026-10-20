@@ -127,7 +127,7 @@ http://api.jolpi.ca/ergast/f1/2026/1/results.json            # Results by round
 http://api.jolpi.ca/ergast/f1/2026/1/qualifying.json         # Qualifying
 ```
 
-See `fetch_2026_for_streamlit.py` for implementation.
+See `fetch_2026_for_streamlit.py` in the `extras` folder for implementation.
 
 ### New vs. Returning Drivers
 
@@ -140,9 +140,12 @@ See `fetch_2026_for_streamlit.py` for implementation.
 
 **Constructor changes:** If team rebranded, use previous team's stats. New teams get mid-field defaults.
 
-### 2026 Limitations
+### Limitations
 
-Model trained on 2009-2022, tested on 2023 (AUC: 0.946). **2026 introduced major regulation changes** — historical patterns may not apply. Predictions less reliable than 2023 test set. Retraining on 2024-2025 data would improve accuracy.
+- Model trained on 2009-2022, tested on 2023 (AUC: 0.946). **2026 introduced major regulation changes** — historical patterns may not apply. Predictions less reliable than 2023 test set. Retraining on 2024-2025 data would improve accuracy.
+- I did not explore telemetry data or same-year races that may have improved model accuracy.
+- Weather categorisation is coarse (dry / wet / variable). There is no distinction between monsoon rain in Singapore and drizzle in Silverstone.
+- Different pit crews perform to different standards. I did not consider pit crew strength as a variable here, but over the course of a race it can have a significant impact.
 
 ### Usage
 
