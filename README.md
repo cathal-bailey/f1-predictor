@@ -95,6 +95,8 @@ Compared 5 ML methods: Naive Bayes, Decision Tree, Random Forest, SVM, XGBoost.
 streamlit run streamlit/f1_predictor_streamlit.py --server.headless true --server.port 8501
 ```
 
+<img width="732" height="709" alt="image" src="https://github.com/user-attachments/assets/90ccbe89-b7f4-4d66-91c3-f60fb106fac4" />
+
 ---
 
 ## Importing Your Own Data
