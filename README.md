@@ -41,7 +41,7 @@ Consolidates 15 CSV files (races, results, drivers, constructors, qualifying, st
 
 ### Phase 2: Feature Engineering (`notebooks/feature_engineering.ipynb`)
 
-Creates historical performance features to prevent data leakage — all features use strictly pre-race data.
+Creates performance features from historical data to prevent data leakage; all features use strictly pre-race data, and I chose not to use data from races in the same year so that the test set was entirely independent from the train set.
 
 **Features created:**
 - **Driver podium %**: year -1, -2, -3 percentages
@@ -133,12 +133,11 @@ See `fetch_2026_for_streamlit.py` in the `extras` folder for implementation.
 
 **Returning drivers:** Use their 2023 stats as baseline for historical features.
 
-**New drivers (no F1 history):** Use defaults:
+**New drivers (no F1 history):** Use conservative defaults:
 - Podium rates: `0.1` (10%)
 - Average positions: `10` (mid-field)
-- Or use teammate's stats as proxy
 
-**Constructor changes:** If team rebranded, use previous team's stats. New teams get mid-field defaults.
+**Constructor changes:** If team rebranded, use previous team's stats. 
 
 ### Limitations
 
@@ -159,4 +158,4 @@ python3 fetch_2026_for_streamlit.py
 streamlit run streamlit/f1_predictor_streamlit.py --server.headless true --server.port 8501
 ```
 
-Uncheck "Use data provided" and upload your CSV. 
+Uncheck "Use data provided" if you wish to upload your own CSV. 
